@@ -1,5 +1,5 @@
 {% set name = "html-sanitizer" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/html_sanitizer-{{ version }}.tar.gz
-  sha256: e04e5bfdfb1940f634aaa44ab208bd189feb005ff035037057e579072321e915
+  sha256: 34d1dfad0cf7663022864521425dcbeaca3ddcca16daa06b1e4325e5347368db
 
 build:
   noarch: python
