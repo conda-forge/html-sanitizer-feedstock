@@ -1,5 +1,5 @@
 {% set name = "html-sanitizer" %}
-{% set version = "2.2.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/html_sanitizer-{{ version }}.tar.gz
-  sha256: e04e5bfdfb1940f634aaa44ab208bd189feb005ff035037057e579072321e915
+  sha256: 752ea75b3f5d93b431038810376df1fbef6ce0854c18b23aa9e03b048f1af435
 
 build:
   noarch: python
@@ -22,7 +22,8 @@ requirements:
   run:
     - python >=3.8
     - beautifulsoup4
-    - lxml >=4.9.1
+    - lxml >=5.2
+    - lxml-html-clean >=0.1
 
 test:
   imports:
