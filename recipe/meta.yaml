@@ -1,26 +1,26 @@
 {% set name = "html-sanitizer" %}
-{% set version = "2.4.4" %}
+{% set version = "2.5.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/html_sanitizer-{{ version }}.tar.gz
-  sha256: f718d3eb150a084d15c80d6546581fb08293ca96234242e9138bf0467cbd5792
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/html_sanitizer-{{ version }}.tar.gz
+  sha256: 8878c2383070e8a5023814d621e4133d15f8c013ec9a5619be280739d56d6ec5
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - beautifulsoup4
     - lxml >=5.2
     - lxml-html-clean >=0.1
@@ -32,6 +32,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: HTML sanitizer
